@@ -1,0 +1,245 @@
+﻿@{
+    Layout = "_Layout";
+}
+
+    <div id="content-wrapper">
+     
+        <div class="d-flex flex-column container-fluid" id="content-wrapper">
+            <div id="content">
+                <nav class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
+                    <div class="container-fluid"><button class="btn btn-link d-md-none rounded-circle me-3" id="sidebarToggleTop" type="button"><i class="fas fa-bars"></i></button>
+                        <form class="d-none d-sm-inline-block me-auto ms-md-3 my-2 my-md-0 mw-100 navbar-search">
+                            <div class="input-group"><input class="bg-light form-control border-0 small" type="text" placeholder="Buscar alumno"><button class="btn btn-primary py-0" type="button"><i class="fas fa-search"></i></button></div>
+                        </form>
+                        <ul class="navbar-nav flex-nowrap ms-auto">
+                            <li class="nav-item dropdown d-sm-none no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><i class="fas fa-search"></i></a>
+                                <div class="dropdown-menu dropdown-menu-end p-3 animated--grow-in" aria-labelledby="searchDropdown">
+                                    <form class="me-auto navbar-search w-100">
+                                        <div class="input-group"><input class="bg-light form-control border-0 small" type="text" placeholder="Search for ...">
+                                            <div class="input-group-append"><button class="btn btn-primary py-0" type="button"><i class="fas fa-search"></i></button></div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </li>
+                          @*barra submenu busqueda*@
+                            <div class="d-none d-sm-block topbar-divider"></div>
+                            <li class="nav-item dropdown no-arrow">
+                            <div class="nav-item dropdown no-arrow">
+                                <a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><span class="d-none d-lg-inline me-2 text-gray-600 small">Federico Piedrasanta</span><img class="border rounded-circle img-profile" width="50" height="50"  src="~/Imagenes/Perfil_federico.jpg"></a>
+                                    <div class="dropdown-menu shadow dropdown-menu-end animated--grow-in"><a class="dropdown-item" href="#"><i class="fas fa-user fa-sm fa-fw me-2 text-gray-400">
+
+                                    </i>&nbsp;Profile</a><a class="dropdown-item" href="#"><i class="fas fa-cogs fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Settingssss</a><a class="dropdown-item" href="#"><i class="fas fa-list fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Activity log</a>
+                                        <div class="dropdown-divider"></div><a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Salir</a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                @*formulario alta de alumno*@
+                <div class="container-fluid">
+                    <h3 class="text-dark mb-4">Alumnos</h3>
+                    <div></div>
+                    <div class="card shadow">
+                        <div class="card-header py-3"></div>
+                        <div class="card-body text-start">
+                            <div class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
+                                <table class="table my-0" id="dataTable">
+                                    <thead>
+                                        <tr>
+                                            <th>TIPO</th>
+                                            <th>DNI</th>
+                                            <th>NOMBRE</th>
+                                            <th>APELLIDO</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>DNI</td>
+                                            <td>33589784</td>
+                                            <td><img class="rounded-circle me-2" width="30" height="30" src="~/Imagenes/alumno_1.jpg">Samanta</td>
+                                            <td>Aroyos</td>
+                                            <td><button class="btn btn-danger" type="button" style="--bs-danger: #e74a3b;--bs-danger-rgb: 231,74,59;margin-right: 20px;">Eliminar</button><button class="btn btn-warning" type="button">Modificar</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>DNI </td>
+                                            <td>34587998</td>
+                                        <td><img class="rounded-circle me-2" width="30" height="30" src="~/Imagenes/alumno_2.jpg">Pedro</td>
+                                            <td>Lopez</td>
+                                            <td><button class="btn btn-danger" type="button" style="--bs-danger: #e74a3b;--bs-danger-rgb: 231,74,59;margin-right: 20px;">Eliminar</button><button class="btn btn-warning" type="button">Modificar</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>DNI </td>
+                                            <td>36558448</td>
+                                        <td><img class="rounded-circle me-2" width="30" height="30" src="~/Imagenes/alumno_3.jpg">Gabriel</td>
+                                            <td>Aguirre</td>
+                                            <td><button class="btn btn-danger" type="button" style="--bs-danger: #e74a3b;--bs-danger-rgb: 231,74,59;margin-right: 20px;">Eliminar</button><button class="btn btn-warning" type="button">Modificar</button></td>
+                                        </tr>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr></tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 align-self-center">
+                                    <p id="dataTable_info" class="dataTables_info" role="status" aria-live="polite">Mostrando 1 de 10</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <nav class="d-lg-flex justify-content-lg-end dataTables_paginate paging_simple_numbers">
+                                        <ul class="pagination">
+                                            <li class="page-item disabled"><a class="page-link" aria-label="Previous" href="#"><span aria-hidden="true">«</span></a></li>
+                                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                            <li class="page-item"><a class="page-link" aria-label="Next" href="#"><span aria-hidden="true">»</span></a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="bg-white sticky-footer">
+                <div class="container my-auto">
+                    <div class="text-center my-auto copyright"></div>
+                </div>
+            </footer>
+        </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
+    </div>
+
+<div class="row">
+    <table width="100%"
+           class="table"
+           id="example"
+           style="table-layout: fixed; word-break: break-word !important;">
+        <thead class="thead-default">
+            <tr>
+                <th>Tipo</th>
+                <th>Numero</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</div>
+
+<script>
+    $(document).ready(function () {
+        var columns = [{
+            "data": "Tipo",
+            "name": "Tipo",
+            "searchable": true,
+            "visible": true,
+            "orderable": true,
+            defaultContent: ""
+        }, {
+            "data": "col2",
+            "name": "Col2",
+            "searchable": true,
+            "visible": true,
+            "orderable": true,
+            defaultContent: ""
+        }, {
+            "data": "col3",
+            "name": "Col3",
+            "searchable": true,
+            "visible": true,
+            "orderable": true,
+            defaultContent: ""
+        }, {
+            data: function (row, type, set) {
+                var s = '';
+                s +=
+                    `<button
+                            title='Editar'
+                            type='button'
+                            class='btn btn-sm btn-primary'
+                            onclick=''
+                            style=''>
+                                <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                        </button>`;
+
+                s +=
+                    `<button
+                            title='Ver'
+                            type='button'
+                            class='btn btn-sm btn-primary'
+                            onclick=''
+                            style='margin-left:2px;'>
+                                <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+                        </button>`;
+
+                s +=
+                    `<button
+                            title='Ver'
+                            type='button'
+                            class='btn btn-sm btn-primary'
+                            onclick=''
+                            style='margin-left:2px;'>
+                                <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                        </button>`;
+
+                s +=
+                    `<button
+                            type='button'
+                            class='btn btn-sm btn-secondary'
+                            style='margin-left:2px;'>
+                                <svg class="c-icon glyphicon" style='width:12px;height:12px;'>
+                                    <use xlink:
+                                        href="${urlContent}img/icons/svg/free.svg#cil-pencil">
+                                    </use>
+                                </svg>
+                        </button>`;
+
+                s +=
+                    `<button
+                            type='button'
+                            class='btn btn-sm btn-secondary'
+                            style='margin-left:2px;background-color:red;'>
+                                <svg class="c-icon glyphicon" style='width:12px;height:12px;'>
+                                    <use xlink:
+                                        href="${urlContent}img/icons/svg/free.svg#cil-pencil">
+                                    </use>
+                                </svg>
+                        </button>`;
+
+                s +=
+                    `<button
+                            type='button'
+                            class='btn btn-sm btn-secondary'
+                            style='margin-left:2px;background-color:green;'>
+                                <svg class="c-icon glyphicon" style='width:12px;height:12px;'>
+                                    <use xlink:
+                                        href="${urlContent}img/icons/svg/free.svg#cil-pencil">
+                                    </use>
+                                </svg>
+                        </button>`;
+
+                return s;
+            },
+            "searchable": false,
+            "orderable": false,
+            "visible": true,
+            defaultContent: ""
+        }];
+
+        createGrid(
+            'example',
+            'GridComponent/GridExample',
+            'ejemplos',
+            columns,
+            null,
+            true);
+    });
+</script>
+
+
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/theme.js"></script>
+
+

@@ -1,0 +1,48 @@
+﻿@model gestion_alumno.Models.Login.LoginViewModel
+
+
+@{
+    ViewData["Title"] = "Logueo";
+     Layout = "_LayoutLogin";
+}
+@*url content es para que me lleve a la raiz del proyecto *@
+<body class="bg-gradient-primary">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-9 col-lg-12 col-xl-10">
+                <div class="card shadow-lg o-hidden border-0 my-5">
+                    <div class="card-body p-0">
+                        <div class="row">
+                            <div class="col-lg-6 d-none d-lg-flex">
+                                <div class="flex-grow-1 bg-login-image" style="background-image: url(./Imagenes/Estudiante.jpg);"></div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="p-5">
+                                    <div class="text-center">
+                                        <h1 class="text-dark mb-4">Bienvenido!</h1>
+                                    </div>
+                                    <form class="user" action='@Url.Content("~/Home/Login")' method="post">
+                                        @if(!Model.isLogged)
+                                        {
+                                            <span style="color:red">@Model.message</span>
+                                        }
+                                        <div class="mb-3"><input class="form-control form-control-user"value="" name="userName" type="text" id="user_name" aria-describedby="emailHelp" placeholder="Ingrese su Usuario" name="email"></div>
+                                        <div class="mb-3"><input class="form-control form-control-user" type="password" value="" id="password" placeholder="Ingrese su contraseña" name="password"></div>
+                                        <div class="mb-3">
+                                            <div class="custom-control custom-checkbox small"></div>
+                                        </div><button class="btn btn-primary d-block btn-user w-100" type="submit">Ingresar</button>
+                                        <hr>
+                                        <hr>
+                                    </form>
+                                    <div class="text-center"></div>
+                                    <div class="text-center"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
